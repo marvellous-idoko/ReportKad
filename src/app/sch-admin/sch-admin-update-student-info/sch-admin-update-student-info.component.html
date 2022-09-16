@@ -1,0 +1,94 @@
+<section class="flex" style="height: 100%;">
+    <div class="flex" *ngIf="!htr">
+        <input style="width: 15em;
+        background-color: beige;
+        height: 2em;
+        padding: 0.5em;color:black;" class="curvCor" id="frm" matInput placeholder="Student's ID" type="text"> 
+        <button (click)="submitDet()" mat-flat-button>get student details</button>
+    </div>
+    <div *ngIf="htr" style="background-color: white;width: fit-content;padding: 2em;color: black;" class="curvCor">
+        <button mat-stroked-button style="float:right;" (click)="deleteUser(det['_id'])">
+            <span>Delete</span></button><h2 style="color:black;">Update student information</h2>
+        <form [formGroup]="addStdntForm" (ngSubmit)="submit()" class="flex" style="place-items:baseline ;">
+            <div>
+                <mat-form-field>
+                    <mat-label>Student Name</mat-label>
+                    <input matInput formControlName="name" type="text">
+                </mat-form-field><br>
+                <mat-form-field>
+                    <mat-label>Student Class</mat-label>
+                    <mat-select placeholder="class" formControlName="class">
+                        <mat-option *ngFor="let class of classes" [value]="class.classVal">
+                            {{ class.className }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <mat-label>Student Sub Class</mat-label>
+                    <mat-select placeholder="SubClass" formControlName="subClass">
+                        <mat-option *ngFor="let subclass of subClasses" [value]="subclass">
+                            {{ subclass }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field><br>
+
+
+                <mat-form-field>
+                    <mat-label>Parent or Guardian Contact</mat-label>
+
+                    <input type="tel" id="phone" matInput formControlName="pCont" placeholder="234-567-890-1234"
+                        pattern="">
+                </mat-form-field><br>
+            </div>
+            <div   style="margin-left: 2em;">
+                <span (click)="  fileInput.click()" id="btyn" class="curvCor">
+                    Update Student Photo
+                </span>
+                <br>
+                <br>
+                <p style="color: green;" *ngIf="gth"> Photo Selected </p>
+                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" (change)="clickd($event)"  #fileInput style="display:none;" accept="jpeg;png;jpg">
+                <mat-form-field>
+
+                    <mat-select placeholder="sex" formControlName="sex">
+                        <mat-option value="Male">
+                            Male
+                        </mat-option>
+                        <mat-option value="Female">
+                            female
+                        </mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>height</mat-label>
+                    <input matInput formControlName="height" type="text">
+                </mat-form-field><br>
+
+                <mat-form-field>
+                    <mat-label>Weight</mat-label>
+                    <input matInput formControlName="weight" type="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Blood Group</mat-label>
+                    <mat-select formControlName="bGrp">
+                        <mat-option value="O+">O+</mat-option>
+                        <mat-option value="AB">AB</mat-option>
+                        <mat-option value="B">B</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <button type="submit" color="primary" mat-raised-button>Update Student Info</button>
+
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+</section>

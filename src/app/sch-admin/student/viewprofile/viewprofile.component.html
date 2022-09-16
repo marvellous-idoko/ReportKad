@@ -1,0 +1,85 @@
+<section style="height:100%;">
+    <div class="flex" style="height: inherit;">
+        <div class=" curvCor" style="background-color: white;color: black;width: 80%;">
+            <div class="pad flex" style="place-content: space-around;">
+                <h1 class="vff">{{lo['name']}}</h1>
+                <img class="avata vff" src="{{lo['photo']}}" alt="">
+            </div>
+            <table class="pad">
+                <tr class="anim">
+                    <th>School ID</th>
+                    <th></th>
+                </tr>
+                <tr class="anim">
+                    <th>Class</th>
+                    <td>{{lo['class']}}</td>
+                </tr>
+                <tr class="anim">
+                    <th>Sub Class</th>
+                    <td>{{lo['subclass']}}
+                        <button (click)="activ('four')" style="float:right;" mat-icon-button color="accent" title="update"  
+                    ><mat-icon>pen</mat-icon></button>
+
+                    </td>
+                </tr>
+                
+                <tr id="four" style="display: none;">
+                    <th  ><input  style="float:right;" type="text" name="four"></th>
+                    <td  ><button style="float:right;" (click)="edit('four')" mat-stroked-button>update</button></td>
+                </tr>
+                <tr  class="anim">
+                    <th>Date of Birth</th>
+                    <td>{{lo['DoB']}}</td>
+                </tr>
+                <tr  class="anim">
+                    <th>Height</th>
+                    <td>{{lo['height']}}
+                        <button (click)="activ('three') " style="float:right;" color="accent" mat-icon-button title="update">
+                            <mat-icon>pen</mat-icon></button>
+                    </td>
+                </tr>
+                <tr  id="three" style="display: none;">
+                    <th  ><input  style="float:right;" type="text" name="three"></th>
+                    <td  ><button style="float:right;" (click)="edit('three')" mat-stroked-button>update</button></td>
+                </tr>
+                <tr class="anim">
+                    <th>Weight</th>
+                    <td>{{lo['weight']}}
+                        <button
+                         style="float:right;" (click)="activ('two')"  color="accent"mat-icon-button title="update"  color="accent"><mat-icon>pen</mat-icon></button>
+                    </td>
+                </tr>
+                <tr id="two" style="display: none;">
+                    <th  ><input  style="float:right;" type="text" name="two"></th>
+                    <td  ><button style="float:right;" (click)="edit('two')" mat-stroked-button>update</button></td>
+                </tr>
+                <tr class="anim">
+                    <th>Blood Group</th>
+                    <td></td>
+                </tr>
+                
+                <tr  class="anim">
+                    <th>Parent's/Guardian's Contact</th>
+                    <td> 
+                         <span>
+                            {{lo['contact']}}
+                        </span> 
+                        <!-- <button style="float:right;display: none;" color="accent" class="one" title="update"><mat-icon>pen</mat-icon></button> -->
+
+                        <!-- <input type="text" value="" id="one"style="" disabled> -->
+                        
+                        <button style="float:right;" color="accent"mat-icon-button 
+                        (click)="activ('one')" title="update">
+                        <!-- <mat-icon>pen</mat-icon> -->
+                    </button>
+                    </td>
+                    
+                </tr>
+                <tr id="one" style="display: none;">
+                <th><input  style="float:right;" type="text" name="one"></th>
+                <td><button  style="float:right;"(click)="edit('one')" mat-stroked-button>update</button></td>
+            </tr>
+            </table>
+        </div>
+    </div>
+</section>

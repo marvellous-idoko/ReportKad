@@ -1,0 +1,39 @@
+<section style="height: 100%;" class="flex">
+    <div class="flex curvCor" style="width:fit-content;padding: 2em; background-color: white;" >
+        <form [formGroup]="actAcctForm">
+            <mat-form-field>
+                <mat-label>School Name</mat-label>
+                <input matInput formControlName="sName"  type="text">
+            </mat-form-field>            
+            <br>
+            <mat-form-field>
+                <mat-label>School Address</mat-label>
+                <input matInput formControlName="address"  type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>School Motto</mat-label>
+                <input matInput formControlName="sMotto"  type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="pwd"  type="password">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="cPwd"  type="password">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Input Activation Pin</mat-label>
+                <input matInput formControlName="ActivationPin"  type="text">
+            </mat-form-field>
+            <br>
+            <button (click)="actAcct()" mat-raised-button color="primary" style="float: right;">
+                Activate Account</button>
+            
+        </form>
+    </div>
+</section>

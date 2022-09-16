@@ -1,0 +1,41 @@
+<section>
+    <div class="curvCor pad" style="background-color:white;color:black;">
+        <table *ngIf="stdnt">
+            <th>Name</th>
+            <th>ID</th>
+            <th>Class</th>
+            <th>Contact</th>
+            <th>Action</th>
+            <!-- <th></th> -->
+            <tr *ngFor="let data of list">
+                <td>{{data['name']}}</td>
+                <td>{{data['id']}}</td>
+                <td>{{data['subclass']}}</td>
+                <td>{{data['contact']}}</td>
+                <td><button mat-flat-button (click)="delete(data['_id'],'S')">Delete</button></td>
+            </tr>
+        </table>
+        <table *ngIf="tchr">
+            <th>Name</th>
+            <th>ID</th>
+            <th>Class</th>
+            <th>subject</th>
+            <th>Email</th>
+            <th>Action</th>
+            <!-- <th></th> -->
+            <tr *ngFor="let data of list">
+                <td>{{data['name']}}</td>
+                <td>{{data['teacherID']}}</td>
+                <td>{{data['subClass']}}</td>
+                <td>{{data['subject']}}</td>
+                <td>{{data['email']}}</td>
+                <td><button mat-flat-button (click)="delete(data['_id'],'T')">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

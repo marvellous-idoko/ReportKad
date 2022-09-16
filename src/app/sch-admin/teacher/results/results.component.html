@@ -1,0 +1,148 @@
+<section>
+  <div>
+    <form class="curvCor pad" style="color:navy; background-color: white;" [formGroup]="getF" (ngSubmit)="check()" >
+      <h3>To View Class list, fill below form</h3>
+      <div class="flex" style="place-content: space-around;">
+      <mat-form-field>
+        <mat-label>Select Session </mat-label>
+        <mat-select formControlName="session">
+          <mat-option value="2020/2021">2020/2021</mat-option>
+          <mat-option value="2021/2022">2021/2022</mat-option>
+          <mat-option value="2022/2023">2022/2023</mat-option>
+          <mat-option value="2023/2024">2023/2024</mat-option>
+          <mat-option value="2024/2025">2024/2025</mat-option>
+          <mat-option value="2025/2026">2025/2026</mat-option>
+          <mat-option value="2026/2027">2026/2027</mat-option>
+          <mat-option value="2027/2028">2027/2028</mat-option>
+          <mat-option value="2029/2030">2029/2030</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Select Term </mat-label>
+        <mat-select formControlName="term">
+          <mat-option value="1st">1st</mat-option>
+          <mat-option value="2nd">2nd</mat-option>
+          <mat-option value="3rd">3rd</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Select Subject </mat-label>
+        <mat-select formControlName="subject">
+          <mat-option value="{{subject}}" *ngFor="let subject of subj">{{subject}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button type="submit">View List</button>
+    </div>
+   </form>
+    <ul *ngIf="g" style="background-color: white; color:black;" class="pad curvCor">
+     <h1>Update Results</h1>
+     <table style="color: black;">
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Session</th>
+          <th>term</th>
+          <th>Test Score</th>
+          <th>Exam Score</th>
+          <th>Total</th>
+          <th>Grade</th>
+          <th>Submit</th>
+        </tr>
+          <tr  class="anim" *ngFor="let student of students">
+            <td> {{student['name']}}</td>
+            <td>{{student['subject']}}</td>
+            <td>
+              <select name="session" id="session" disabled  value="{{sessionValue}}"  class="{{student['_id']}}">
+                <option>Select Session</option>
+                <option>2020/2021</option>
+                <option>2021/2022</option>
+                <option>2022/2023</option>
+                <option>2023/2024</option>
+                <option>2024/2025</option>
+                <option>2025/2026</option>
+                <option>2026/2027</option>
+                <option>2027/2028</option>
+                <option>2029/2030</option>
+              </select>
+            </td>
+            <td>
+              <select name="term"  value="{{termValue}}" id="term" disabled  class="{{student['_id']}}">
+                <option>Select term</option>
+                <option>1st</option>
+                <option>2nd</option>
+                <option>3rd</option>
+              </select>
+            </td>
+            <td><input type="number" class="{{student['_id']}} inpt" value="{{student['testScr']}}"></td>
+            <td><input type="number" class="{{student['_id']}} inpt" value="{{student['ExamScr']}}"></td>
+            <td><input type="number"  class="{{student['_id']}} inpt" value="{{student['total']}}"></td>
+            <td><input type="Text"  class="{{student['_id']}} inpt" value="{{student['Grade']}}"></td>
+            <td>
+              <button mat-stroked-button color="primary" 
+              class="{{student['_id']}}" 
+              (click)="sumbitRe(student['_id'])">Submit</button>
+            </td>
+          </tr>
+       </table>
+    </ul>
+    
+    <ul *ngIf="gh" style="background-color: white; color:black;" class="pad curvCor">
+     <h1>Enter Results</h1>
+      <table style="color: black;">
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Session</th>
+          <th>term</th>
+          <th>Test Score</th>
+          <th>Exam Score</th>
+          <th>Total</th>
+          <th>Grade</th>
+          <th>Submit</th>
+        </tr>
+          <tr  class="anim" *ngFor="let student of students">
+            <td> {{student['name']}}</td>
+            <td>{{currSubj}}</td>
+            <td>
+              <select name="session" disabled id="session" value="{{sessionValue}}"  class="{{student['id']}}">
+                <option>Select Session</option>
+                <option>2020/2021</option>
+                <option>2021/2022</option>
+                <option>2022/2023</option>
+                <option>2023/2024</option>
+                <option>2024/2025</option>
+                <option>2025/2026</option>
+                <option>2026/2027</option>
+                <option>2027/2028</option>
+                <option>2029/2030</option>
+              </select>
+            </td>
+            <td>
+              <select name="term" id="term" 
+              value="{{termValue}}" disabled class="{{student['id']}}">
+                <option>Select term</option>
+                <option>1st</option>
+                <option>2nd</option>
+                <option>3rd</option>
+              </select>
+            </td>
+            <td><input type="number" class="{{student['id']}} inpt" value="{{student['testScr']}}"></td>
+            <td><input type="number" class="{{student['id']}} inpt" value="{{student['ExamScr']}}"></td>
+            <td><input type="number"  class="{{student['id']}} inpt" value="{{student['total']}}"></td>
+            <td><input type="Text"  class="{{student['id']}} inpt" value="{{student['Grade']}}"></td>
+            <td>
+              <button mat-stroked-button color="primary" class="{{student['id']}}" (click)="sumbitRe(student['id'])">Submit</button>
+            </td>
+          </tr>
+       </table>
+    </ul>
+  </div>
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+  <div class="loader-wrapper flex">
+      <img src="../../assets/imgs/loader.gif" alt="">
+  </div>
+</section>

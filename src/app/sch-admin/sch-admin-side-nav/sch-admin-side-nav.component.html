@@ -1,0 +1,136 @@
+<section>
+    <nav class="flex">
+        <div>
+           <div class="flex pad curvCor" style="background-color:white;">
+             <img style="    height: 15em;
+             margin: -60px 0;" src="../../../assets/bigLogo.svg" alt="ReportKad__logo">
+            </div>
+            <ul *ngIf="lo['SchoolName']">
+                <li class="links flex ">
+                    <a class="curvCor flex" routerLinkActive="active" title="Dashboard" routerLink="dashboard">
+                        <mat-icon>grid_view</mat-icon>
+                        <h3>Menu</h3>
+                    </a>
+                </li>
+                <li class="links flex">
+                    <a class="curvCor flex" routerLink="AddTeacher" title="Add Teacher" routerLinkActive="active">
+                        <mat-icon>person_add</mat-icon>
+                        <h3>Add Teacher</h3>
+                    </a>
+                </li>
+                <li class="links flex">
+                    <a routerLinkActive="active" class="flex curvCor" title="Add Sub Class"
+                        routerLink="AddSubClass">
+                        <mat-icon>category</mat-icon>
+                        <h3>Create Sub Class</h3>
+                    </a>
+                </li>
+                <li class="links flex">
+                    <a class="curvCor flex" routerLink="AddStudent" routerLinkActive="active"
+                        title="Register New Student">
+                        <mat-icon>add_circle</mat-icon>
+                        <h3>Register Student</h3>
+                    </a>
+                </li>
+                <li class="links flex">
+                    <a class="curvCor flex" routerLinkActive="active" routerLink="updateStudentInfo" title="Update Student Info">
+                        <mat-icon>update</mat-icon>
+                        <h3>Update Student</h3>
+                    </a></li>
+                <li class="links flex">
+                    <a class="curvCor flex" routerLinkActive="active" routerLink="updateTeacherInfo" title="Update Teacher Info">
+                        <mat-icon>manage_accounts</mat-icon>
+                        <h3>Update Teacher</h3>
+                    </a></li>
+                <li class="links flex curvCor">
+                    <a class="curvCor flex" href="" title="Resolve Issues">
+                        <mat-icon>tune</mat-icon>
+                        <h3>Resolve Issues</h3>
+                       
+                    </a>
+                </li>
+                <!-- <li class="links flex curvCor"><a class="curvCor"href="">Create Pin</a></li> -->
+                <!-- <li class="links flex curvCor"><a class="curvCor"href="">dwd</a></li> -->
+            </ul>
+            <ul *ngIf="lo['teacherID']">
+                <li class="links flex ">
+                    <a class="curvCor flex" routerLinkActive="active" title="All Classes" routerLink="teacher">
+                        <mat-icon>grid_view</mat-icon>
+                        <h3>My Classes</h3>
+
+                    </a>
+                </li>
+                <!-- <li class="links flex curvCor">
+                    <a class="curvCor" routerLink="AddTeacher" title="Add Teacher" routerLinkActive="active">
+                        <mat-icon>person_add</mat-icon>
+                    </a>
+                </li>
+                <li class="links flex curvCor"><a class="curvCor" title="Add Sub Class" routerLink="AddSubClass">
+                        <mat-icon>category</mat-icon>
+                    </a></li>
+                <li class="links flex curvCor"><a class="curvCor" routerLink="AddStudent" title="Register New Student">
+                        <mat-icon>add_circle</mat-icon>
+
+                    </a></li>
+                <li class="links flex curvCor"><a class="curvCor" routerLink="AddStudent" title="Update Student Info">
+                        <mat-icon>update</mat-icon>
+                    </a></li>
+                <li class="links flex curvCor"><a class="curvCor" routerLink="AddStudent" title="Update Teacher Info">
+                        <mat-icon>manage_accounts</mat-icon>
+                    </a></li>
+                <li class="links flex curvCor"><a class="curvCor" href="" title="Resolve Issues">
+                        <mat-icon>tune</mat-icon>
+                    </a></li> -->
+                <!-- <li class="links flex curvCor"><a class="curvCor"href="">Create Pin</a></li> -->
+                <!-- <li class="links flex curvCor"><a class="curvCor"href="">dwd</a></li> -->
+            </ul>
+            <ul *ngIf="lo['id']">
+                <li class="links flex curvCor">
+                    <a class="curvCor flex" routerLinkActive="active" title="VIew Results"
+                     routerLink="viewResult">
+                   <mat-icon>list</mat-icon>
+                   <h3>View Results</h3>
+                    </a>
+                </li>
+
+                <li class="links flex ">
+                    <a class="curvCor flex curvCor" routerLinkActive="active" title="View Profile" routerLink="viewProfile">
+                        <mat-icon>person</mat-icon>
+                   <h3>View Profile</h3>
+                         </a>
+                </li>
+                <li class="links flex ">
+                    <a class="curvCor flex curvCor" routerLinkActive="active" title="View my pins" routerLink="getStdntPins">
+                        <mat-icon>token</mat-icon>
+                   <h3>Get My Pins</h3>
+                         </a>
+                </li>
+             
+                <li class="links flex">
+                    <a class="curvCor  flex" routerLinkActive="active" title="Purchase Pin" 
+                    routerLink="getPin">
+                    <mat-icon>pin</mat-icon>
+                   <h3>Purchase Pin</h3> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li class="links flex ">
+                    <a class="curvCor flex" routerLink="#" title="Register Student">
+                        <mat-icon>settings</mat-icon>
+                        <h3>Settings</h3>
+                    </a>
+                </li>
+                <li class="links flex">
+                    <a class="flex curvCor" (click)="logout()" title="Logout">
+                        <mat-icon>logout</mat-icon>
+                        <h3> Sign Out</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</section>

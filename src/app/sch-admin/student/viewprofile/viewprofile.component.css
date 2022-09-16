@@ -1,0 +1,22 @@
+.disp{
+    display :block!important;
+transition: all 2s ease;}
+.show{
+    display: table-row!important;
+    /* height: 0; */
+    animation: slide .42s ease-in forwards;
+}
+@keyframes slide {
+    0%{
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    50%{
+
+    }
+    100% {
+        /* height: inherit; */
+        transform: translateY(5px);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,28 @@
+<section style="height: 100%;">
+    <div class="flex" style="height: inherit;">
+        <div  class=" pad curvCor"  style="background-color: white;color:navy;width: fit-content;">
+            <h1>Purchase Account Pin</h1>
+            <form [formGroup]="frm">
+                <h3>Verify your School ID</h3>
+                <mat-form-field appearance="outline">
+                    <mat-label>Input your School ID</mat-label>
+                    <input type="number" (change)="checkId()" formControlName="id" name="id" matInput id="">
+                </mat-form-field>
+                <br>
+                <i *ngIf="ty">loading . . . Please wait</i>
+
+                <h3>Price</h3>
+                <h1>{{50000}}</h1>
+            </form>
+
+            <button disabled="true" matRipple angular4-paystack [paystackOptions]="options" 
+            class="kol" id="bthn"
+                (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event)">
+                Buy Pin 
+            </button>
+            <h2 *ngIf="pin">Here is your Pin</h2>
+            <h1><code>{{pin}}</code></h1>
+    
+        </div>
+    </div>
+</section>

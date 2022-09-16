@@ -1,0 +1,42 @@
+.box{
+    background-color: var(--lightDk);
+    width: 10em;
+    height: 10em;
+    border-radius: 10px;
+    
+}
+li,ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul#list{
+    margin-bottom: 2em; place-content: space-around;
+
+}
+@media (max-width:900px) {
+    ul#list{
+        display: grid;
+    grid-template-columns: auto auto;
+    }
+    .box{
+        margin: 1em 0;
+    }
+}
+@media (max-width:500px) {
+    ul#list{
+        display: grid;
+    grid-template-columns: auto;
+    }
+}
+a{
+    color: inherit;
+}
+button.mat-button div.btnWrap{
+    height: 100%;
+    flex-direction: column;
+    place-content: space-evenly;
+}
+
+button.mat-button{
+    }

@@ -1,0 +1,33 @@
+h1.hy{
+    font-size: 7em;
+    animation-duration: 3.5s;
+}
+.anim{
+    animation: haj 1s cubic-bezier(.1, .82, .25, 1) forwards;
+}
+#first{
+    width: 100%;
+    height: 100%;
+    flex: 2;
+}
+#second{
+    flex:1
+}
+@media (max-width:900px) {
+    #first{
+        display: none;
+    }
+}
+@keyframes haj {
+
+    0%,
+    30% {
+        opacity: 0;
+        transform: translateY(100px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}

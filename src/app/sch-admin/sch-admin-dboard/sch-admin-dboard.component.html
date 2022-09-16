@@ -1,0 +1,163 @@
+<section style="height: 100%;" class="flex">
+    <div style="width:100%">
+        <nav>
+            <div class="flex pad" style="place-content: space-between;" ><h2>Welcome, {{sg}}</h2>
+                 
+                <button class="butt" *ngIf="de['portal'] ===  false" (click)="portal(true)" id="portOpenButt">open portal</button>
+                <button class="butt" *ngIf="de['portal'] === true"  (click)="portal(false)" id="portCloseButt">close portal</button>
+            </div>
+            <hr>
+        </nav>
+        <ul class="flex" style="  margin-bottom: 2em; place-content: space-around;">
+            <li>
+                <button class="box" (click)="goto('AddTeacher')" mat-button title="Add Teacher">
+                    <div class="btnWrap flex">
+                        <div style="width: 100%; ">
+                            <H5>Add Teacher</H5>
+                            <hr>
+                        </div>
+                        <div  class="flex">
+                            <mat-icon style="width: inherit;font-size: 3em;">person_add</mat-icon>
+                        </div>
+                    </div>
+                </button>
+            </li>
+
+            <li>
+                <button class="box" (click)="goto('AddSubClass')" mat-button>
+                    <div>
+                        <H5>Create Sub-Class</H5>
+                        <hr>
+                    </div>
+                    <div  class="flex">
+                        <mat-icon>category</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <li>
+                <button class="box" (click)="goto('AddSubject')" mat-button>
+                    <div>
+                        <H5>Add Subject</H5>
+                        <hr>
+                    </div>
+                    <div  class="flex">
+                        <mat-icon>note_add</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <li>
+                <button class="box" (click)="goto('AddStudent')" mat-button>
+                    <div>
+                        <H5>Register Student</H5>
+                        <hr>
+                    </div>
+                    <div  class="flex">
+                        <mat-icon>add_circle</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+        </ul>
+        <ul class="flex" style="  margin-bottom: 2em; place-content: space-around;">
+            <li>
+                <button (click)="goto('viewList/T')"class="box"  mat-button>
+                    <div>
+                        <H5>View Teachers List</H5>
+                        <hr>
+                    </div>
+                    <div class="flex">
+                        <mat-icon>list</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <li>
+                <button (click)="goto('printBroadSheet')"class="box"  mat-button>
+                    <div>
+                        <H5>Print Broad Sheet</H5>
+                        <hr>
+                    </div>
+
+                    <div class="flex">
+                        <mat-icon>receipt_long</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            
+            <li>
+                <button class="box" (click)="goto('updateTeacherInfo')" mat-button>
+                    <div>
+                        <H5>Update Teacher Info</H5>
+                        <hr>
+                    </div>
+                    <div  class="flex">
+                        <mat-icon>manage_accounts</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <li>
+                <button class="box" (click)="goto('updateStudentInfo')" mat-button>
+                    <div>
+                        <H5>Update Student Info</H5>
+                        <hr>
+                    </div>
+                    <div  class="flex">
+                        <mat-icon>update</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <!-- <li>
+                <button class="box" mat-button></button>
+            </li> -->
+        </ul>
+        <ul style="place-content: baseline; margin-bottom: 2em;" class="flex">
+            <li style="margin: 0 12% 0 6%;">
+                <button class="box" mat-button (click)="goto('promoteStdnt')">
+                    <div>
+                        <H5>Promote Students</H5>
+                        <hr>
+                    </div>
+                    <div class="flex">
+                        <mat-icon>school</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <li>
+                <button (click)="goto('viewList/S')"class="box"  mat-button>
+                    <div>
+                        <H5>View Student Register</H5>
+                        <hr>
+                    </div>
+                    <div class="flex">
+                        <mat-icon>list</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+            <!-- <li>
+                <button class="box" mat-button>
+                    <div>
+                        <H5>Promote Students</H5>
+                        <hr>
+                    </div>
+                    <div>
+                        <mat-icon>move</mat-icon>
+                    </div>
+                    <div></div>
+                </button>
+            </li> -->
+            <!-- <li>
+                <button class="box" mat-button></button>
+            </li>
+            <li>
+                <button class="box" mat-button></button>
+            </li> -->
+        </ul>
+    </div>
+</section>

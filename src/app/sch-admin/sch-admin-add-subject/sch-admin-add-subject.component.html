@@ -1,0 +1,13 @@
+<section class="flex" style="height: 100%;">
+    <div class="curvCor" style="background-color: white;width: fit-content;padding: 2em;color: black;"   >
+       
+        <form [formGroup]="addSubjForm" (ngSubmit)="submit()">
+            <h3>Add New Subject</h3>
+            <mat-form-field>
+                <mat-label>Subject Name</mat-label>
+                <input matInput formControlName="Subjt" type="text">
+            </mat-form-field><br>
+            <button style="float:right;" mat-raised-button color="primary">Submit</button>
+        </form>
+    </div>
+</section>

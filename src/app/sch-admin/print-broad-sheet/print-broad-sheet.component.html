@@ -1,0 +1,84 @@
+<div class="pad curvCor " style="background-color: white;margin:1em;">
+    <form style="place-content: space-around;" (ngSubmit)="getResults()" [formGroup]="frm" id="frm" class="flex">
+        <mat-form-field appearance="outline">
+            <mat-label>Choose Session</mat-label>
+            <mat-select formControlName="session">
+                <mat-option value="2020/2021">2020/2021</mat-option>
+                <mat-option value="2021/2022">2021/2022</mat-option>
+                <mat-option value="2022/2023">2022/2023</mat-option>
+                <mat-option value="2023/2024">2023/2024</mat-option>
+                <mat-option value="2024/2025">2024/2025</mat-option>
+                <mat-option value="2025/2026">2025/2026</mat-option>
+                <mat-option value="2026/2027">2026/2027</mat-option>
+                <mat-option value="2027/2028">2027/2028</mat-option>
+                <mat-option value="2029/2030">2029/2030</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose Term</mat-label>
+            <mat-select formControlName="term">
+                <mat-option value="1st">1st</mat-option>
+                <mat-option value="2nd">2nd</mat-option>
+                <mat-option value="3rd">3rd</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose Class</mat-label>
+            <mat-select formControlName="class">
+                <mat-option value="1">JSS1</mat-option>
+                <mat-option value="2">JSS2</mat-option>
+                <mat-option value="3">JSS3</mat-option>
+                <mat-option value="4">SSS1</mat-option>
+                <mat-option value="5">SSS2</mat-option>
+                <mat-option value="6">SSS3</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Select Sub Class</mat-label>
+            <mat-select formControlName="subclass">
+                <mat-option  *ngFor="let subClass of subClasses" value="{{subClass}}">{{subClass}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+                <mat-form-field appearance="outline">
+            <mat-label>Select Subject</mat-label>
+            <mat-select formControlName="subject">
+                <mat-option  *ngFor="let subject of subjects" value="{{subject}}">{{subject}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Pin</mat-label>
+            <input type="text" formControlName="pin" style="color: black;" matInput placeholder="input your pin"
+                maxlength="10">
+        </mat-form-field> -->
+        <button mat-raised-button style="float:right;" color="primary">View Result</button>
+</form>
+</div>
+<br>
+<div *ngIf="gyh" style="background-color: white;color: black;" class="pad curvCor">
+<table>
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Test Score</th>
+    <th>Exam Score</th>
+    <th>Total</th>
+    <th>Grade</th>
+    <th>Teacher</th>
+    <tr *ngFor="let data of results">
+        <td>{{data['name']}}</td>
+        <td>{{data['subject']}}</td>
+        <td>{{data['testScr']}}</td>
+        <td>{{data['ExamScr']}}</td>
+        <td>{{data['total']}}</td>
+        <td>{{data['Grade']}}</td>
+        <td>{{data['lastUpdatedBy']}}</td>
+    </tr>
+    
+</table>
+</div>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

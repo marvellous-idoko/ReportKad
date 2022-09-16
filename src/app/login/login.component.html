@@ -1,0 +1,38 @@
+<section style="height: 100%;">
+    <div class="flex" style="height: inherit;">
+        <div style="background: url(../../assets/imgs/bg-img.jpg) no-repeat center;" id="first">
+        <div class="flex" style="color:white; height: inherit;background-color:rgb(0 0 0 / 76%);">
+            <div>
+                <h1 class="hy anim" style="">Report</h1>
+                <h1  class="hy anim" style="margin-bottom: 0.3em;opacity: 0;animation-delay: 1s; margin-top:.5em; color:var(--blue)">Kad</h1>
+                <i style="animation-delay: 4s;opacity:0;margin-top: 1em;font-size: large;" class="anim"> . . . redefining academic reports</i>
+            </div>
+        </div>    
+    </div>
+        <div id="second" class="flex">
+            <div class="curvCor"style="    border: 1px solid var(--blue);    padding: 2em;
+            width: fit-content;">
+                <h1 color="primary">SignIn to ReportKad</h1>
+                <form [formGroup]="LoginForm" (ngSubmit)="login()">
+                    <mat-form-field>
+                        <mat-label>ID or email</mat-label>
+                        <input style="color:black;" matInput formControlName="id" type="text">
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input style="color:black;" matInput formControlName="pwd" type="password">
+                    </mat-form-field><br>
+                    <button style="width: 100%;" mat-raised-button color="primary"><span>Sign In</span></button>
+                </form>
+                <br>
+                <a routerLink="../resetPwd" ><button style="width:100%;" mat-stroked-button><span>Forgot Password</span></button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+</section>

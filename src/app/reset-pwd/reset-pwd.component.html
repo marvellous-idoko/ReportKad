@@ -1,0 +1,34 @@
+<section class="flex" style="height:100%">
+    <div id="hu" class="pad curvCor" *ngIf="!show">
+        <form [formGroup]="rstfrm" (ngSubmit)="puts()">
+            <div>
+                <h1 style="font-family: monospace;">Let's help get your account</h1>
+                <mat-form-field>
+                    <mat-label>Your Email or Account Id</mat-label>
+                    <input formControlName="id" type="text" matInput>
+                </mat-form-field>
+                <button mat-stroked-button>search your account</button>
+            </div>
+        </form>
+    </div>
+    <div class="pad" *ngIf="show">
+        <form [formGroup]="rstfrmNw" (ngSubmit)="setNwPwd()">
+            <mat-form-field style="width:100%;" appearance="outline">
+                <mat-label>New Password</mat-label>
+                <input formControlName="pwd" type="text" matInput class="">
+            </mat-form-field>
+            <br>
+            <mat-form-field  style="width:100%;" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input formControlName="cfrm" type="text" matInput  class="">
+            </mat-form-field>
+            <button mat-raised-button color="primary" style="width: 100%;">Reset Password</button>
+        </form>
+    </div>
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+</section>

@@ -1,0 +1,8 @@
+#frm{
+    justify-content: space-evenly;
+}
+@media (max-width:500px) {
+    #frm{
+        display: grid;
+    }
+}

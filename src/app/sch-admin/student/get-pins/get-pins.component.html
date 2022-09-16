@@ -1,0 +1,31 @@
+<section>
+    <div>
+        <ul class="flex" style="place-content:start;">
+            <li *ngFor="let pin of pins" class=" curvCor bg-light">
+                <button class="box" mat-button style="padding: 1em;">
+                    <div>
+                        <H1>{{pin['value']}}</H1>
+                        <hr>
+                    </div>
+                    <div style="width:15em;">
+                        <ul style="    padding: 0;
+                        ">
+                            <li class="flex" style="place-content: space-between;">
+                                <span>Date Purchased</span><span>{{pin['dateCreated'] | date }}</span></li>
+                            <li  class="flex" style="place-content: space-between;"><span>No. of Times Used</span><span>{{pin['noOfTimesUsed']}}</span></li>
+                            <li class="flex" style="place-content: space-between;"><span>Session</span><span>{{pin['session']}}</span></li>
+                            <li class="flex" style="place-content: space-between;"><span>term</span><span>{{pin['term']}}</span></li>
+                        </ul>
+                    </div>
+                    <div></div>
+                </button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

@@ -1,0 +1,36 @@
+<section style="height: 100%;">
+    <div class="flex" style="height: inherit;">
+        <div  class=" pad curvCor"  style="background-color: white;color:navy;width: fit-content;">
+            <h1>Purchase Result Pin</h1>
+            <h2>{{1000 | currency :'NGN'}}</h2>
+            <!-- <form [formGroup]="frm">
+                <h3>Verify your student ID</h3>
+                <mat-form-field appearance="outline">
+                    <mat-label>Input your student ID</mat-label>
+                    <input type="number" (change)="checkId()" formControlName="id" name="id" matInput id="">
+                </mat-form-field>
+                <br>
+                <i *ngIf="ty">loading . . . Please wait</i>
+                <h3>Price</h3>
+                <h1>300</h1>
+            </form> -->
+
+            <button mat-stroked-button angular4-paystack [paystackOptions]="options" 
+            class="kol" id="bthn"
+                (paymentInit)="paymentInit()" 
+                (onClose)="paymentCancel()"
+                (callback)="paymentDone($event)">
+                Buy Pin 
+            </button>
+            <h2 *ngIf="pin">Here is your Pin</h2>
+            <h1><code>{{pin}}</code></h1>
+    
+        </div>
+    </div>
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

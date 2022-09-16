@@ -1,0 +1,53 @@
+<div class="pad curvCor" style="background-color:white;margin:1em;">
+    <div style="display:flex;">
+        <ul style="flex: 1;">
+            <li>Name: </li>
+            <li>Class: </li>
+            <li>Student ID:</li>
+            <li>Session: </li>
+        </ul>
+        <ul style="flex: 3;font-weight: bold;">
+            <li>{{this.s.entObj['name']}}</li>
+            <li>{{this.s.entObj['subclass']}}</li>
+            <li>{{this.s.entObj['id']}}</li>
+            <li>{{this.s.printRes[0]['session']}}</li>
+
+        </ul>
+        <img style="flex:1;" class="vff avatar" src="{{this.s.entObj['photo']}}" alt="{{this.s.entObj['name']}}'s Photo">
+    </div>
+
+    <table style="color: black;">
+
+        <th>Term</th>
+        <th>Subject</th>
+        <th>Test Score</th>
+        <th>Exam Score</th>
+        <th>Total</th>
+        <th>Grade</th>
+        <tr *ngFor="let result of s.printRes">
+            <td>{{result['term']}}</td>
+            <td>{{result['subject']}}</td>
+            <td>{{result['testScr']}}</td>
+            <td>{{result['ExamScr']}}</td>
+            <td>{{result['total']}}</td>
+            <td>{{result['Grade']}}</td>
+        </tr>
+    </table>
+    <br><br>
+    <div style="display: flex;
+    justify-content: space-around;">
+        <div>
+            <p>student average</p>
+            <h3 style="font-weight:bolder;">{{stdntAvg }}%</h3>
+            <!-- <h3 style="font-weight:bolder;">{{stdntAvg | percent}}%</h3> -->
+        </div>
+        <div><p>Class Average</p><h3 style="font-weight:bolder;">{{classAvg }}%</h3></div>
+        <!-- <div><p>Class Average</p><h3 style="font-weight:bolder;">{{classAvg | percent}}%</h3></div> -->
+        <div><p>Position</p><h3 style="font-weight:bolder;">{{position['position']}}</h3></div>
+        <div><p>No in Class</p><h3 style="font-weight:bolder;">{{position['noInClass']}}</h3></div>
+    </div>
+    <button mat-button (click)="print()"> Print Result</button>
+</div>
+<footer class="pad flex" style="color:var(--blue)">
+        <h1>ReportKad | De Aftermath Consults</h1>
+</footer>

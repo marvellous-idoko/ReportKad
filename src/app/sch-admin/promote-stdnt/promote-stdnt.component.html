@@ -1,0 +1,35 @@
+<section>
+    <div class="pad curvCor" style="background-color: white;color: black;">
+        <h1>Promote Students</h1>
+        <hr>
+        <h3></h3>
+        <div class="flex" style="justify-content: space-around;">
+            <div><label for="session"><h2>select session to promote </h2></label>
+            <select name="term" id="session" value="" #jk class="">
+                <option>2020/2021</option>
+                <option>2021/2022</option>
+                <option>2022/2023</option>
+                <option>2023/2024</option>
+                <option>2024/2025</option>
+                <option>2025/2026</option>
+                <option>2026/2027</option>
+                <option>2027/2028</option>
+                <option>2029/2030</option>
+            </select>
+        </div>
+            <button mat-raised-button color="primary"
+             (click)="pro( jk.value)">Promote</button>
+        </div>
+    </div>
+    <br><br>
+    <div style="color:var(--blue);background-color: white;" class="curvCor pad">
+        <h1>List of Students not promoted</h1>
+        <ul>
+            <li class=" flex"style="bordeer-bottom:1px black solid; justify-content:space-around;" *ngFor="let stdnt of stdnts">
+                <p>{{stdnt.name}}</p>
+                <p>Average: &nbsp;{{stdnt.score}}%</p>
+                <button mat-stroked-button style="border-radius:10%;" (click)= "promoteSingle(stdnt.stdntId)">Promote</button>
+            </li>
+        </ul>
+    </div>
+</section>

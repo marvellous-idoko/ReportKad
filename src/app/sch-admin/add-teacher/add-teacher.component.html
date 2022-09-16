@@ -1,0 +1,58 @@
+<section style="height: 100%;" class="flex">
+    
+    <div style="background-color: white;width: fit-content;padding: 2em;color: black;" class="curvCor">
+        <h2 style="color:black;">Input New Teacher Details</h2>
+        <form [formGroup]="addTechForm">
+            <mat-form-field>
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="name" id="name" type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label for="class">Class</mat-label>
+                <mat-select placeholder="class" formControlName="class">
+                    <mat-option *ngFor="let class of classes" [value]="class.classVal">
+                        {{ class.className }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+        </form>
+        <div class="flex" style="place-items: baseline;
+        place-content:space-around;">
+            <div style="margin-right: 3em;">
+                <h3 style="color: black;">Assign Sub class</h3>
+               <div style="display: grid;grid-template-columns: auto auto;">      
+                          <div  style="margin:0 5px" *ngFor="let subClass of subClasses">
+                    <mat-checkbox name="{{subClass}}" (click)="addSubClass(subClass)">
+                    </mat-checkbox>
+                    <mat-label style="color: black;"> {{subClass}}
+                    </mat-label>
+                </div>
+            </div>
+            </div>
+            <div>
+                <h3 style="color: black;">Assign Subject</h3>
+               <div style="display: grid;grid-template-columns: auto auto auto;">      
+                <div *ngFor="let subject of subjects" style="margin:0 5px">
+                    <mat-checkbox name="{{subject}}" (click)="addSubjects(subject)">
+                    </mat-checkbox>
+                    <mat-label style="color: black;"> {{subject}}
+                    </mat-label>
+                </div>
+            </div>
+            <!-- <mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group> -->
+            </div>
+        </div>
+        <br><br><br>
+        <button (click)="submit()" mat-raised-button color="primary" style="float: right;">Add Teacher</button>
+    </div>
+</section>
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

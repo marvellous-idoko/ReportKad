@@ -1,0 +1,71 @@
+<section>
+    <div>
+        <h1>Welcome, {{lo['name']}}</h1>
+    </div>
+    <div>
+        <ul class="flex" id="list">
+            <a routerLink="../viewResult"  style=" margin: 0 5% 0 0;">
+                <li>
+                    <button class="box" mat-button title="View Results">
+                        <div class="btnWrap flex">
+                            <div style="width: 100%; ">
+                                <H5>View Results</H5>
+                                <hr>
+                            </div>
+
+                            <div>
+                                <mat-icon style="    margin-left: -100%;font-size: 3em;">records</mat-icon>
+                            </div>
+                        </div>
+                    </button>
+                </li>
+            </a>
+            <a routerLink="../viewProfile">
+
+                <li>
+                    <button class="box" mat-button>
+                        <div>
+                            <H5>View Profile</H5>
+                            <hr>
+                        </div>
+                        <div>
+                            <mat-icon style="margin-left: 30%;font-size: 3em;">person</mat-icon>
+                        </div>
+                        <div></div>
+                    </button>
+                </li>
+            </a>
+            <a routerLink="../getPin">
+
+                <li>
+                    <button class="box" mat-button>
+                        <div>
+                            <H5>Purchase Pin</H5>
+                            <hr>
+                        </div>
+                        <div>
+                            <mat-icon style="margin-left: 30%;font-size: 3em;">generating_tokens</mat-icon>
+                        </div>
+                        <div></div>
+                    </button>
+                </li>
+            </a>       
+            <a routerLink="../getStdntPins">
+
+                <li>
+                    <button class="box" mat-button>
+                        <div>
+                            <H5>Get My Pins</H5>
+                            <hr>
+                        </div>
+                        <div>
+                            <mat-icon style="margin-left: 30%;font-size: 3em;">token</mat-icon>
+                        </div>
+                        <div></div>
+                    </button>
+                </li>
+            </a>
+
+        </ul>
+    </div>
+</section>

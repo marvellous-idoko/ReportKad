@@ -1,0 +1,14 @@
+<section class="flex" style="height: 100%;">
+    <div class="curvCor pad bg-light">
+        <h2 style="text-align: center;">New School Account</h2>
+        <hr>
+        <form  [formGroup]="regForm"  (ngSubmit)="createSch()">
+            <label for="email">Email</label><br>
+            <input style="height: 2em;
+            width: 20em;
+            font-size: 1.2em;margin: 1em 0;" type="text" formControlName="email" id="email"><br>
+            
+            <button mat-raised-button>Create Account</button>
+        </form>
+    </div>
+</section>

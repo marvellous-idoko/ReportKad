@@ -1,0 +1,13 @@
+input.mat-input{
+    color: black;
+}
+#btyn:hover{
+    background-color: darkblue;
+    transition: background-color .42s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+    #btyn{
+    background-color: blue;
+    cursor: pointer;
+    padding: 1em;
+    color: white;
+}

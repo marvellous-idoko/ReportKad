@@ -1,0 +1,21 @@
+<section>
+    <div>
+        <h1>Welcome, {{lo['name']}}</h1>
+        <h3>Below are classes assigned to you</h3>
+        <hr>
+        <ul class="flex" style="width:fit-content;">
+            <li style="    margin: 0 1em;" *ngFor="let class of classes">
+                <button (click)="getStudents(class)" color="accent"
+                 mat-flat-button><span>{{class}}</span>
+                </button>
+
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

@@ -1,0 +1,66 @@
+<section class="flex" style="height:100%;">
+    <div class="flex" *ngIf="!htr">
+        <input style="width: 15em;
+        background-color: beige;
+        height: 2em;
+        padding: 0.5em;color:black;" class="curvCor" id="frm" matInput placeholder="Teacher's ID" type="text"> 
+        <button (click)="submitDet()" mat-flat-button>get details</button>
+    </div>
+    <div *ngIf="htr" style="background-color: white;width: fit-content;padding: 2em;color: black;" class="curvCor">
+        <button mat-stroked-button style="float:right;" (click)="deleteUser(det['_id'])"><span>Delete</span></button><h2 style="color:black;">Update Teacher Details</h2>
+        <form [formGroup]="addTechForm">
+                <mat-label>Full Name</mat-label>
+            <input  value="{{det['name']}}" id="name" type="text">
+            <br>
+            <br>
+
+            <!-- <mat-form-field> -->
+                <mat-label for="class">Assign Class</mat-label>
+                <select id="clasx" placeholder="class" style="width:50%;" value="{{det['class']}}">
+                    <option *ngFor="let class of classes" [value]="class.classVal">
+                        {{ class.className }}
+                    </option>
+                </select>
+            <br>
+
+            <!-- </mat-form-field> -->
+            
+        </form>
+        <br>
+        <div class="flex" style="place-items: baseline;place-content:space-around;">
+            <div style="margin-right: 3em;" >
+                <h3 style="color: black;">Assign New Sub class</h3>
+                <div style="display: grid;grid-template-columns: auto auto auto;">
+                    
+                <div *ngFor="let subClass of subClasses">
+                    <mat-checkbox name="{{subClass}}" (click)="addSubClass(subClass)">
+                    </mat-checkbox>
+                    <mat-label style="color: black;"> {{subClass}}
+                    </mat-label>
+                </div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color: black;">Assign Subject</h3>
+                <div style="display: grid;grid-template-columns: auto auto auto;">
+                    <div *ngFor="let subject of subjects">
+                    <mat-checkbox name="{{subject}}" (click)="addSubjects(subject)">
+                    </mat-checkbox>
+                    <mat-label style="color: black;"> {{subject}}
+                    </mat-label>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <br><br><br>
+        <button (click)="submit()" mat-raised-button color="primary" style="float: right;">Update Teacher</button>
+    </div>
+
+</section>
+
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+  </section>

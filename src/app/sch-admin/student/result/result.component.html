@@ -1,0 +1,88 @@
+<section>
+    <div class="pad curvCor " style="background-color: white;margin:1em;">
+        <form [formGroup]="frm" id="frm" class="flex">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Session</mat-label>
+                <mat-select formControlName="session">
+                    <mat-option value="2020/2021">2020/2021</mat-option>
+                    <mat-option value="2021/2022">2021/2022</mat-option>
+                    <mat-option value="2022/2023">2022/2023</mat-option>
+                    <mat-option value="2023/2024">2023/2024</mat-option>
+                    <mat-option value="2024/2025">2024/2025</mat-option>
+                    <mat-option value="2025/2026">2025/2026</mat-option>
+                    <mat-option value="2026/2027">2026/2027</mat-option>
+                    <mat-option value="2027/2028">2027/2028</mat-option>
+                    <mat-option value="2029/2030">2029/2030</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Term</mat-label>
+                <mat-select formControlName="term">
+                    <mat-option value="1st">1st</mat-option>
+                    <mat-option value="2nd">2nd</mat-option>
+                    <mat-option value="3rd">3rd</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Pin</mat-label>
+                <input type="text" formControlName="pin" style="color: black;" matInput placeholder="input your pin"
+                    maxlength="10">
+            </mat-form-field>
+            <button (click)="sub()" mat-raised-button style="float:right;" color="primary">View Result</button>
+
+            <!-- <mat-form-field>
+                <mat-select formControlName="">
+                    <mat-option value=""></mat-option>
+                    <mat-option value=""></mat-option>
+                    <mat-option value=""></mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select formControlName="">
+                    <mat-option value=""></mat-option>
+                    <mat-option value=""></mat-option>
+                    <mat-option value=""></mat-option>
+                </mat-select>
+            </mat-form-field> -->
+        </form>
+    </div>
+    <!-- <div style="background-color: white;">
+            <select name="ka" id="ffg" class="pad">
+                <mat-option value="1st">1st Term</mat-option>
+                <mat-option value="2nd">2nd Term</mat-option>
+                <mat-option value="3rd">3rd Term</mat-option>
+            </select>
+            <button (click)="sub()" mat-raised-button style="float:right;" color="primary">View Result</button>
+        </div> -->
+
+
+    <div  *ngIf="show" class="pad curvCor" style="background-color:white;margin:1em;">
+        
+        <a routerLink="../../printResult" style="float: right;margin: 1em 0;">
+            <button mat-stroked-button color="accent">Print Result</button>
+        </a>
+        <table style="color: black;">
+
+            <th>Term</th>
+            <th>Subject</th>
+            <th>Test Score</th>
+            <th>Exam Score</th>
+            <th>Total</th>
+            <th>Grade</th>
+            <tr *ngFor="let result of results">
+                <td>{{result['term']}}</td>
+                <td>{{result['subject']}}</td>
+                <td>{{result['testScr']}}</td>
+                <td>{{result['ExamScr']}}</td>
+                <td>{{result['total']}}</td>
+                <td>{{result['Grade']}}</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/imgs/loader.gif" alt="">
+    </div>
+</section>
+<router-outlet name="print"></router-outlet>

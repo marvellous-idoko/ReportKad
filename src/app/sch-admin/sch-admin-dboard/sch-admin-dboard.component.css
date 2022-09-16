@@ -1,0 +1,40 @@
+.box{
+    background-color: var(--lightDk);
+    width: 10em;
+    height: 10em;
+    border-radius: 10px;
+    
+}
+li,ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+button.mat-button div.btnWrap{
+    height: 100%;
+    flex-direction: column;
+    place-content: space-evenly;
+}
+
+button.mat-button{
+    }
+    button.butt{
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: none;
+    will-change: background-color;
+    transition: background-color .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #portOpenButt:hover{
+        background-color: #226009;
+        border: 0;
+    }
+    #portCloseButt:hover{
+        background-color: red;
+        border: 0;
+        
+    }
